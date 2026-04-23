@@ -6,7 +6,7 @@ from .routes import batches
 from .routes import sessions
 from .routes import attendance
 from .routes import summary
-
+from fastapi.middleware.cors import CORSMiddleware
 
 # -----------------------------
 #  Lifespan (Startup / Shutdown)
@@ -32,6 +32,15 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+# Add this block immediately after creating 'app'
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins (fine for local development)
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
+
 
 # -----------------------------
 #  Health Check
@@ -40,6 +49,7 @@ app = FastAPI(
 async def health_check():
 
     return {"status": "System is running!"}
+
 
 
 # -----------------------------

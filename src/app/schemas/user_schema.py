@@ -1,5 +1,5 @@
 from pydantic import BaseModel, EmailStr
-from app.enums import UserRole
+from ..enums import UserRole
 
 
 
