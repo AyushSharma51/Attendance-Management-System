@@ -1,26 +1,22 @@
-# 🚀 SkillBridge Attendance Management API
+#  SkillBridge Attendance Management API
 
 A FastAPI-based backend system for managing batches, sessions, and attendance with JWT authentication and role-based access control.
 
 ---
 
-# 🌐 Live API
+#  Live API
 
-**Base URL:**
+Base URL:
 
 ```
-https://your-deployed-api.com
+https://attendance-management-system-fb7g.onrender.com/
 ```
 
-> If deployment is not working, replace with:
->
-> ```
-> Not deployed. Runs successfully on local environment.
-> ```
+
 
 ---
 
-## 🔹 Test Login (Live)
+##  Test Login (Live)
 
 ```bash
 curl -X POST "https://your-deployed-api.com/auth/login" \
@@ -33,7 +29,7 @@ curl -X POST "https://your-deployed-api.com/auth/login" \
 
 ---
 
-# 🛠️ Local Setup
+#  Local Setup
 
 ## 1. Clone Repository
 
@@ -99,7 +95,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 🔑 Authentication
+#  Authentication
 
 ### Access Token (JWT)
 
@@ -114,11 +110,11 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 📡 API Endpoints
+#  API Endpoints
 
 ---
 
-## 🔹 Auth
+##  Auth
 
 ### Signup
 
@@ -148,7 +144,7 @@ curl -X POST "http://localhost:8000/auth/login" \
 
 ---
 
-## 🔹 Batches
+##  Batches
 
 ### Create Batch
 
@@ -186,7 +182,7 @@ curl -X POST "http://localhost:8000/batches/join" \
 
 ---
 
-## 🔹 Sessions
+##  Sessions
 
 ### Create Session
 
@@ -205,7 +201,7 @@ curl -X POST "http://localhost:8000/sessions/" \
 
 ---
 
-## 🔹 Attendance
+##  Attendance
 
 ### Mark Attendance
 
@@ -229,7 +225,7 @@ curl -X GET "http://localhost:8000/sessions/1/attendance" \
 
 ---
 
-## 🔹 Summary
+##  Summary
 
 ### Batch Summary
 
@@ -249,7 +245,7 @@ curl -X GET "http://localhost:8000/programme/summary" \
 
 ---
 
-## 🔹 Monitoring
+##  Monitoring
 
 ### Get Monitoring Token
 
@@ -281,7 +277,7 @@ DELETE /monitoring/attendance
 
 ---
 
-# 🧠 Schema Decisions
+#  Schema Decisions
 
 ### batch_trainers
 
@@ -300,7 +296,7 @@ DELETE /monitoring/attendance
 
 ---
 
-# ✅ What is Working
+#  What is Working
 
 * JWT Authentication
 * Role-based access control
@@ -312,7 +308,7 @@ DELETE /monitoring/attendance
 
 ---
 
-# ⚠️ Partial / Limitations
+#  Partial / Limitations
 
 * batch_trainers table not used
 * No advanced analytics in summaries
@@ -320,18 +316,17 @@ DELETE /monitoring/attendance
 
 ---
 
-# 🔧 What I'd Improve
+#  What I'd Improve
 
 With more time:
 
 * Implement multi-trainer support using `batch_trainers`
 * Add caching for summaries
-* Improve test coverage
 * Add refresh tokens
 
 ---
 
-# 🧪 Running Tests
+#  Running Tests
 
 ```bash
 poetry run pytest -v
@@ -339,7 +334,7 @@ poetry run pytest -v
 
 ---
 
-# 🎯 Tech Stack
+#  Tech Stack
 
 * FastAPI
 * PostgreSQL
@@ -350,6 +345,6 @@ poetry run pytest -v
 
 ---
 
-# 📌 Author
+#  Author
 
 Ayush Sharma

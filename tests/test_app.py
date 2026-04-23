@@ -15,11 +15,11 @@ real AsyncSession; the rest hit the full ASGI stack via httpx.AsyncClient.
 import os
 import pytest
 import pytest_asyncio
-from datetime import date, time, datetime, timedelta
+from datetime import date, datetime, timedelta
 
 from httpx import AsyncClient, ASGITransport
 from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker, AsyncSession
-from sqlalchemy import select
+
 
 # ── patch env before importing the app ────────────────────────────────────────
 os.environ.setdefault("SECRET_KEY", "test-secret-key-for-pytest-only")
