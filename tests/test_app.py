@@ -28,11 +28,11 @@ os.environ.setdefault(
     "sqlite+aiosqlite:///./test_attendance.db"   # lightweight; swapped in below
 )
 
-from app.main import app                          # FastAPI app
-from app.database import get_db                   # dependency we'll override
-from app.db_models import Base, User, Batch, BatchTrainer, Session as SessionModel
-from app.security.auth import hash_password, create_access_token
-from app.enums import UserRole
+from src.app.main import app                          # FastAPI app
+from src.app.database import get_db                   # dependency we'll override
+from src.app.db_models import Base, User, Batch, BatchTrainer, Session as SessionModel
+from src.app.security.auth import hash_password, create_access_token
+from src.app.enums import UserRole
 
 # ── test database (SQLite in-memory per test session) ─────────────────────────
 TEST_DB_URL = "sqlite+aiosqlite:///./test_attendance_pytest.db"
@@ -211,8 +211,8 @@ async def test_student_marks_own_attendance(
 
     The session window is set to NOW ± 1 hour so the 'active' check passes.
     """
-    from app.db_models import BatchStudent, Attendance
-    from app.enums import AttendanceStatus
+    from src.app.db_models import BatchStudent, Attendance
+    from src.app.enums import AttendanceStatus
 
     trainer = await _create_user(db_session, role=UserRole.TRAINER)
     student = await _create_user(db_session, role=UserRole.STUDENT)
